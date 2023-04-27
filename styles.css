@@ -1,0 +1,31 @@
+header{
+    background-image: linear-gradient( rgb(0, 140, 255), rgb(0, 55, 255));
+    height: 100vh;
+    position: fixed;
+    padding: 1vw;
+}
+
+article{
+    margin: 0 15vw 0 15vw;
+}
+
+body{
+    background-image: linear-gradient(white, rgb(235, 246, 255));
+}
+
+.menu div h2{
+    margin-bottom: 1vw;
+}
+
+.logo{
+    width: 15vw;
+    height: 10vw;
+}
+
+.titel, .noten, .prufungen, .nachrichten{
+    margin: 4vw;
+}
+
+.titel h2, .noten h2, .prufungen h2, .nachrichten h2{
+    font-weight: bold;
+}
