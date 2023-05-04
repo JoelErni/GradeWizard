@@ -1,0 +1,20 @@
+footer{
+    padding-left: calc(100%/7);
+    background-color: rgb(35, 66, 110);
+}
+
+#footer_container{
+    padding: 1.5vw;
+}
+
+a{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    font-size: 1.25em;
+    padding: 1vw;
+    line-height: 0;
+}
+
+a:hover{
+    font-size: 1.5em;
+    cursor:pointer;
+}

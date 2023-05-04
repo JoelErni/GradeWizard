@@ -1,20 +1,8 @@
-header{
-    background-image: linear-gradient( rgb(0, 140, 255), rgb(0, 55, 255));
-    height: 100vh;
-    position: fixed;
-    padding: 1vw;
-}
-
 article{
-    margin: 0 15vw 0 15vw;
-}
-
-body{
-    background-image: linear-gradient(white, rgb(235, 246, 255));
-}
-
-.menu div h2{
-    margin-bottom: 1vw;
+    margin: 0 10vw;
+    background-color: rgba(255, 255, 255, 0.531);
+    padding: 5vw;
+    height: 200vh;
 }
 
 .logo{
@@ -28,4 +16,10 @@ body{
 
 .titel h2, .noten h2, .prufungen h2, .nachrichten h2{
     font-weight: bold;
+}
+
+.article-background{
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 0 45vw, rgb(169, 221, 255) 55vw), url(/src/images/background.png);
+    background-repeat: no-repeat;
+    background-size:contain;
 }

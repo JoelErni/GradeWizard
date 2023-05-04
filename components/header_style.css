@@ -1,0 +1,25 @@
+header{
+    background-image: linear-gradient( rgb(0, 140, 255), rgb(0, 55, 255));
+    height: 100vh;
+    position:fixed;
+    width: calc(100%/7);
+}
+
+.menu{
+    padding: 1vw;
+}
+
+menulabel{
+    font-size: 1.5vw;
+    line-height: 3vw;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+}
+
+menulabel:hover{
+    font-size: 1.75vw;
+}
+
+a:visited, a, a:link{
+    text-decoration: none;
+    color: white;
+}
