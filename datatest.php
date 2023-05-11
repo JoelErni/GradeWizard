@@ -21,6 +21,6 @@
 	//while($rowb = mysqli_fetch_assoc($resultb))
 	//{
 	//	$gt = $rowb["bez"];
-	//}
+	//} 
 
 ?>
