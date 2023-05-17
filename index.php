@@ -10,7 +10,7 @@
         <div style="display: flex;">
             <div style="flex: 1">
                 <!-- HEADER -->
-                <?php include("components\header.html")?>
+                <?php include("components/header.html")?>            
             </div>
             <div style="flex: 7" class="article-background">
                 <article>
@@ -51,7 +51,7 @@
                         </table>         
                     </div>
                     <div class="prufungen">
-                        <h2>Bevorstehende Prüfungen</h2>
+                        <h2>Bevorstehende Pr端fungen</h2>
                         <table class="table">
                             <tr>
                                 <th><h3>Datum</h3></th>
@@ -89,7 +89,7 @@
                                     <span class="fs-5">D21a</span>
                                 </td>
                                 <td>
-                                    <span class="fs-5">Giacomo Küenzi</span>
+                                    <span class="fs-5">Giacomo K端enzi</span>
                                 </td>
                                 <td>
                                     <span class="fs-5">13:22</span>

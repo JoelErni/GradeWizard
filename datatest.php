@@ -2,7 +2,7 @@
 	$servername = "localhost:3306";
 	$username = "jeppecwx_root";
 	$password = "gw69penis";
-	$dbname = "test";
+	$dbname = "jeppecwx_GradeWizard";
 
 	// Create connection
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -11,16 +11,31 @@
 		die("Connection failed: " . mysqli_connect_error());
 	}
 	
-	//$result5 = mysqli_query($conn, "SELECT * FROM car WHERE rank=5 AND fk_racetypeid = $type");
-	//$result4 = mysqli_query($conn, "SELECT * FROM car WHERE rank=4 AND fk_racetypeid = $type");
-	//$result3 = mysqli_query($conn, "SELECT * FROM car WHERE rank=3 AND fk_racetypeid = $type");
-	//$result2 = mysqli_query($conn, "SELECT * FROM car WHERE rank=2 AND fk_racetypeid = $type");
-	//$result1 = mysqli_query($conn, "SELECT * FROM car WHERE rank=1 AND fk_racetypeid = $type");
-	//$resultb = mysqli_query($conn, "SELECT * FROM racetype WHERE racetypeid = $type");
-	
-	//while($rowb = mysqli_fetch_assoc($resultb))
-	//{
-	//	$gt = $rowb["bez"];
-	//} 
+	$result = mysqli_query($conn, 'SELECT * FROM user WHERE name="erni"');
 
+   while($row = mysqli_fetch_assoc($result))
+   {
+       $id = $row["id"];
+       $name = $row["name"];
+       $vorname = $row["vorname"];
+       $email = $row["email"];
+       $anz_note = mysqli_fetch_assoc(mysqli_query($conn, "SELECT count(note) as total from note"))['total'];
+   }
+?>
+
+<h1><?php echo $vorname ?> <?php echo $name ?></h1>
+<h2><?php echo $email ?></h2>
+
+<?php
+   	$result = mysqli_query($conn, "SELECT * from note WHERE fk_userId=".$id);
+	while ($row = mysqli_fetch_assoc($result))
+	{
+		foreach ($row as $field => $value)
+		{
+			if($field == 'note'){
+			    echo  $value;
+			}
+		}
+
+	}
 ?>
