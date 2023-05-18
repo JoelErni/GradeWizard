@@ -1,6 +1,26 @@
 <?php 
     $header_ratio = [1,6];
     $id = htmlspecialchars($_GET["id"]);
+    $email = htmlspecialchars($_GET["email"]);
+    $password = htmlspecialchars($_GET["password"]);
+
+	$servername = "localhost:3306";
+	$username = "jeppecwx_root";
+	$password = "gw69penis";
+	$dbname = "jeppecwx_GradeWizard";
+
+	// Create connection
+	$conn = mysqli_connect($servername, $username, $password, $dbname);
+    $result = mysqli_query($conn, 'SELECT * FROM user WHERE email="'.$email.'" AND password="'.$password.'"');
+
+    while($row = mysqli_fetch_assoc($result))
+   {
+       $id = $row["id"];
+       $name = $row["name"];
+       $vorname = $row["vorname"];
+       $email = $row["email"];
+       $anz_note = mysqli_fetch_assoc(mysqli_query($conn, "SELECT count(note) as total from note"))['total'];
+   }
 
     if (empty($id) and !($id == 0)) {
         header("Location: login.php");
