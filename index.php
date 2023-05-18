@@ -1,5 +1,11 @@
 <?php 
     $header_ratio = [1,6];
+    $id = htmlspecialchars($_GET["id"]);
+
+    if (empty($id) and !($id == 0)) {
+        header("Location: login.php");
+        die();
+    }
 ?>
 
 <!DOCTYPE html>

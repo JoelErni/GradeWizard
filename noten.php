@@ -8,7 +8,7 @@
     $id = htmlspecialchars($_GET["id"]);
 
 
-    if (empty($id) and !isset($id)) {
+    if (empty($id) and !($id == 0)) {
         echo "Ein Fehler ist aufgetreten!<br>Gehe zur Homepage und melden Sie sich an.";
         die;
     }
