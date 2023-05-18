@@ -24,7 +24,6 @@
             $id = $row["id"];
         }
         header("Location: index.php?id=".$id);
-        die();
     }else if (empty($id) and !($id == 0) and !(empty($email) and empty($password))){ // wenn id
         $result = mysqli_query($conn, 'SELECT * FROM user WHERE id='.$id);
     }
