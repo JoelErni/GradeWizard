@@ -8,8 +8,8 @@
     $id = htmlspecialchars($_GET["id"]);
 
 
-    if (empty($id)) {
-        echo "Variable 'a' is empty.<br>";
+    if (empty($id) and !isset($id)) {
+        echo "Ein Fehler ist aufgetreten!<br>Gehe zur Homepage und melden Sie sich an.";
         die;
     }
 
