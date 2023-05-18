@@ -4,7 +4,7 @@
     $email = htmlspecialchars($_GET["email"]);
     $password = htmlspecialchars($_GET["password"]);
 
-    if (empty($id) and !($id == 0) and (empty($email) and empty($password))) {
+    if (empty($id) and (empty($email) and empty($password))) {
         header("Location: login.php");
         die();
     }
@@ -17,24 +17,24 @@
     // Create connection
     $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-    if (empty($id) and !($id == 0) and !(empty($email) and empty($password))){ // Wenn kein ID aber passowrd email vorhanden
+    if (empty($id) and !(empty($email) and empty($password))){ // Wenn kein ID aber passowrd email vorhanden
         $result = mysqli_query($conn, 'SELECT * FROM user WHERE email="'.$email.'" AND password="'.$password.'"');
         while($row = mysqli_fetch_assoc($result))
         {
             $id = $row["id"];
         }
         header("Location: index.php?id=".$id);
-    }else if (empty($id) and !($id == 0) and !(empty($email) and empty($password))){ // wenn id
+    }else if (!empty($id)){
         $result = mysqli_query($conn, 'SELECT * FROM user WHERE id='.$id);
+        while($row = mysqli_fetch_assoc($result))
+        {
+            $id = $row["id"];
+            $name = $row["name"];
+            $vorname = $row["vorname"];
+            $email = $row["email"];
+        }
     }
 
-    while($row = mysqli_fetch_assoc($result))
-    {
-        $id = $row["id"];
-        $name = $row["name"];
-        $vorname = $row["vorname"];
-        $email = $row["email"];
-    }
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +57,7 @@
                         <h1 class="text-center">GRADE<span><img alt="Logo" src="/src/images/logo.jpg" class="logo"></span>WIZARD</h1>
                     </div>
                     <div>
-                        <h1>Hallo Max Siddel</h1>
+                        <h1>Hallo <?php echo ucfirst($vorname)?></h1>
                         <p class="fs-4">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text.</p>
                     </div>
                     <div class="noten">
