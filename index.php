@@ -9,13 +9,13 @@
         die();
     }
 
-    $servername = "localhost:3306";
-    $username = "jeppecwx_root";
-    $password = "gw69penis";
-    $dbname = "jeppecwx_GradeWizard";
+    $db_servername = "localhost:3306";
+    $db_username = "jeppecwx_root";
+    $db_password = "gw69penis";
+    $db_name = "jeppecwx_GradeWizard";
 
     // Create connection
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    $conn = mysqli_connect($db_servername, $db_username, $db_password, $db_name);
 
     if (empty($id) and !(empty($email) and empty($password))){ // Wenn kein ID aber passowrd email vorhanden
         $result = mysqli_query($conn, 'SELECT * FROM user WHERE email="'.$email.'" AND password="'.$password.'"');
@@ -34,7 +34,6 @@
             $email = $row["email"];
         }
     }
-
 ?>
 
 <!DOCTYPE html>
@@ -57,11 +56,13 @@
                         <h1 class="text-center">GRADE<span><img alt="Logo" src="/src/images/logo.jpg" class="logo"></span>WIZARD</h1>
                     </div>
                     <div>
-                        <h1>Hallo <?php echo ucfirst($vorname)?></h1>
-                        <p class="fs-4">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text.</p>
+                        <h1>Willkommen <?php echo ucfirst($vorname)?>!</h1>
+                        <p class="fs-4">
+                            Mit GradeWizard wird die Schule ein Kinderspiel bla bla.
+                        </p>
                     </div>
                     <div class="noten">
-                        <h2>Noten</h2>
+                        <h2>Deine Noten</h2>
                         <table class="table">
                             <tr>
                                 <th><h3>Fach</h3></th>

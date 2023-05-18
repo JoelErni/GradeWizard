@@ -1,10 +1,10 @@
 <?php
     $header_ratio = [1,6];
 
-	$servername = "localhost:3306";
-	$username = "jeppecwx_root";
-	$password = "gw69penis";
-	$dbname = "jeppecwx_GradeWizard";
+    $db_servername = "localhost:3306";
+    $db_username = "jeppecwx_root";
+    $db_password = "gw69penis";
+    $db_name = "jeppecwx_GradeWizard";
     $id = htmlspecialchars($_GET["id"]);
 
 
@@ -14,7 +14,7 @@
     }
 
 	// Create connection
-	$conn = mysqli_connect($servername, $username, $password, $dbname);
+	$conn = mysqli_connect($db_servername, $db_username, $db_password, $db_name);
 	// Check connection
 	if (!$conn) {
 		die("Connection failed: " . mysqli_connect_error());
