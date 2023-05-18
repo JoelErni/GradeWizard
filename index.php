@@ -1,5 +1,5 @@
 <?php 
-    $header_ratio = [2,7];
+    $header_ratio = [1,6];
 ?>
 
 <!DOCTYPE html>
@@ -12,11 +12,11 @@
     </head>
     <body>
         <div style="display: flex;">
-            <div style="flex: <?php echo $header_ratio[0] ?>">
+            <div style="flex: <?php echo $header_ratio[0]; ?>">
                 <!-- HEADER -->
                 <?php include("components/header.html")?>
             </div>
-            <div style="flex: <?php echo $header_ratio[1] ?>" class="article-background">
+            <div style="flex: <?php echo $header_ratio[1]; ?>" class="article-background">
                 <article>
                     <div class="titel"> 
                         <h1 class="text-center">GRADE<span><img alt="Logo" src="/src/images/logo.jpg" class="logo"></span>WIZARD</h1>

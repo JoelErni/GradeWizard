@@ -1,5 +1,5 @@
 <?php
-    $header_ratio = [2,7];
+    $header_ratio = [1,6];
 
 	$servername = "localhost:3306";
 	$username = "jeppecwx_root";
@@ -35,11 +35,11 @@
     </head>
     <body>
         <div style="display: flex;">
-            <div style="flex: <?php echo $header_ratio[0]?>">
+            <div style="flex: <?php echo $header_ratio[0]; ?>">
                 <!-- HEADER -->
                 <?php include("components/header.html"); ?>
             </div>
-            <div style="flex: <?php echo $header_ratio[1]?>" class="article-background">
+            <div style="flex: <?php echo $header_ratio[1]; ?>" class="article-background">
                 <article>
                     <h1>Hallo <?php echo ucfirst($vorname); ?></h1>
                     <h2>Hier sind deine Noten:</h2>
