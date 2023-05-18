@@ -34,7 +34,6 @@
         $name = $row["name"];
         $vorname = $row["vorname"];
         $email = $row["email"];
-        $anz_note = mysqli_fetch_assoc(mysqli_query($conn, "SELECT count(note) as total from note"))['total'];
     }
 ?>
 
