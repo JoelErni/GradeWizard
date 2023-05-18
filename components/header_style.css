@@ -1,8 +1,6 @@
 header{
     background-image: linear-gradient( rgb(0, 140, 255), rgb(0, 55, 255));
     height: 100vh;
-    position:fixed;
-    width: calc(100%/7);
 }
 
 .menu{
