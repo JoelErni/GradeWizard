@@ -4,6 +4,11 @@
     $email = htmlspecialchars($_GET["email"]);
     $password = htmlspecialchars($_GET["password"]);
 
+    if (empty($id) and !($id == 0) and (empty($email) and empty($password))) {
+        header("Location: login.php");
+        die();
+    }
+
     $servername = "localhost:3306";
     $username = "jeppecwx_root";
     $password = "gw69penis";
@@ -11,7 +16,18 @@
 
     // Create connection
     $conn = mysqli_connect($servername, $username, $password, $dbname);
-    $result = mysqli_query($conn, 'SELECT * FROM user WHERE email="'.$email.'" AND password="'.$password.'"');
+
+    if (empty($id) and !($id == 0) and !(empty($email) and empty($password))){ // Wenn kein ID aber passowrd email vorhanden
+        $result = mysqli_query($conn, 'SELECT * FROM user WHERE email="'.$email.'" AND password="'.$password.'"');
+        while($row = mysqli_fetch_assoc($result))
+        {
+            $id = $row["id"];
+        }
+        header("Location: index.php?id=".$id);
+        die();
+    }else if (empty($id) and !($id == 0) and !(empty($email) and empty($password))){ // wenn id
+        $result = mysqli_query($conn, 'SELECT * FROM user WHERE id='.$id);
+    }
 
     while($row = mysqli_fetch_assoc($result))
     {
@@ -21,7 +37,6 @@
         $email = $row["email"];
         $anz_note = mysqli_fetch_assoc(mysqli_query($conn, "SELECT count(note) as total from note"))['total'];
     }
-    echo $name.$email.$vorname;
 ?>
 
 <!DOCTYPE html>
