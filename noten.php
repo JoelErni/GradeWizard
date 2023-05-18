@@ -7,6 +7,12 @@
 	$dbname = "jeppecwx_GradeWizard";
     $id = htmlspecialchars($_GET["id"]);
 
+
+    if (empty($id)) {
+        echo "Variable 'a' is empty.<br>";
+        die;
+    }
+
 	// Create connection
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
 	// Check connection
