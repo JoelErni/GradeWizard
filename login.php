@@ -19,8 +19,8 @@
             <div style="flex: <?php echo $header_ratio[1]; ?>" class="article-background">
                 <article>
                     <h1>Login</h1>
-                    <form>
-                        <div class="form-group" action="/index.php" method="get">
+                    <form action="/index.php" method="get">
+                        <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
                         </div>
