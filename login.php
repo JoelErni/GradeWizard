@@ -18,17 +18,34 @@
             </div>
             <div style="flex: <?php echo $header_ratio[1]; ?>" class="article-background">
                 <article>
-                    <h1>Login</h1>
+                    <h1>Anmelden</h1>
                     <form action="/index.php" method="get">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                            <label for="exampleInputEmail1">Email Adresse</label>
+                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email Adresse">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                            <label for="exampleInputPassword1">Passwort</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Passwort">
                         </div>
-                        <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+                        <br>
+                        <button type="submit" class="btn btn-primary" value="submit">Anmelden</button>
+                    </form>
+                    <br>
+                    <h3>- oder -</h3>
+                    <br>
+                    <h1>Registrieren</h1>
+                    <form action="/register.php" method="get">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email Adresse</label>
+                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email Adresse">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Passwort</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Passwort">
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary" value="submit">Registrieren</button>
                     </form>
                 </article>
                 <!-- FOOTER -->

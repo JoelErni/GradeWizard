@@ -23,3 +23,7 @@ article{
     background-repeat: no-repeat;
     background-size:contain;
 }
+
+.register:visited .register{
+    color: rgb(0, 102, 255);
+}
